@@ -27,7 +27,7 @@ function Block(){
     return(
         <>
         <input type="num" onChange={(e)=>{setDesiredBlocks(+e.target.value)}}/>
-        {typeof blocks == [] ? <p>whut?</p> : blocks}
+        if (blocks){blocks}
         </>
     )
 }
