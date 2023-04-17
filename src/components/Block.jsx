@@ -1,4 +1,5 @@
-import React from "react";
+import { useState } from "react"
+import { Color } from "three"
 import "../styles/boxgame.css"
 
 /*
@@ -15,15 +16,19 @@ export default function Grid(){
 }
 
 function Block(){
-    let desiredBlocks = 9
+    const [desiredBlocks, setDesiredBlocks] = useState(0)
     let blocks = []
     for (let i = 0; i < desiredBlocks; i++) {
-        let block = <div className="block">i'm a block</div>
+        let block = <div className="block" style={{backgroundColor: `rgb(${Math.random()*256},${Math.random()*256},${Math.random()*256}`}}>i'm a block</div>
+
         blocks.push(block)
     }
     
     return(
-        blocks
+        <>
+        <input type="num" onChange={(e)=>{setDesiredBlocks(+e.target.value)}}/>
+        {typeof blocks == [] ? <p>whut?</p> : blocks}
+        </>
     )
 }
 
