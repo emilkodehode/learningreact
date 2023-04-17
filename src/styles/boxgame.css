@@ -1,0 +1,12 @@
+.gridblocks{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    background-color: blueviolet;
+    padding: 10px;
+}
+.block{
+    width: 250px;
+    height: 250px;
+    background-color: aquamarine;
+}
